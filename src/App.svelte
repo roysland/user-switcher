@@ -9,6 +9,7 @@
     if (!existing) {
       window.localStorage.setItem("users", JSON.stringify([]));
     }
+    window.localStorage.removeItem("currentUser");
     ready = true;
   });
 </script>

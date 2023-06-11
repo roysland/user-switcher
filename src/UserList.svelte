@@ -43,6 +43,11 @@
         refreshList()
     };
 
+    const deleteAll = () => {
+        window.localStorage.setItem("users", JSON.stringify([]))
+        refreshList()
+    }
+
     const userCreateToggle = () => {
         showAddUser = !showAddUser;
         getUsers()
@@ -82,7 +87,12 @@
         <UserAdd on:userAdded={refreshList} />
     {/if}
 
-    <div class="p-4 flex items-center justify-end">
+    <div class="p-4 flex items-center justify-between">
+        {#if users.length > 0}
+        <button class="pointer-events-auto ml-8 rounded-md bg-red-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-red-500" on:click={deleteAll}>
+            Slett alle
+        </button>
+        {/if}
         <button
             on:click={() => (showAddUser = !showAddUser)}
             class="pointer-events-auto ml-8 rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500"
