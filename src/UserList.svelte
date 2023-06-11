@@ -83,8 +83,6 @@
     {/if}
 
     <div class="p-4 flex items-center justify-end">
-        <button on:click={() => mockAuth("sjur.varhaug@vieri.no", "8H292xpI")} class="pointer-events-auto rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500">
-            Mock Auth</button>
         <button
             on:click={() => (showAddUser = !showAddUser)}
             class="pointer-events-auto ml-8 rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500"
