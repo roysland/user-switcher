@@ -10,6 +10,10 @@ Skru på Cors i programmet du skal jobbe i.
 Plugins.Add(new CorsFeature());
 ```
 Dette gjøres i Configure.Apphost.cs
+Så bør du sørge for at denne endringen ikke blir med i noen commits:
+```bash
+git update-index --assume-unchanged .\Procury\Procury\Configure.AppHost.cs
+```
 ## Åpne Chrome/Edge
 Åpne extensions siden for [Chrome](chrome://extensions/) eller [Edge](edge://extensions)
 
