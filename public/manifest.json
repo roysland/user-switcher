@@ -7,9 +7,16 @@
       "default_popup": "index.html"
     },
     "host_permissions": [
-      "https://*.localhost*"
+      "https://*.localhost*",
+      "nav.localhost",
+      ".localhost*",
+      "*.localhost",
+      "*"
     ],
     "permissions": [
+      "activeTab",
+      "declarativeContent",
+      "storage",
       "cookies"
     ]
   }

@@ -30,16 +30,13 @@
         localStorage.setItem("currentUser", user.email);
         getCurrentUser = user.email;
         const login = await mockAuth(user.email, user.password)
+        let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        console.log(tab)
         chrome.cookies.set({
-            details: {
-                name: 'ss-id',
-                value: login.SessionId,
-            }
+            name: 'ss-id',
+            value: login.SessionId,
+            url: tab.url,
         })
-        chrome.tabs.query({active: true, currentWindow: true}, function (arrayOfTabs) {
-            const code = 'window.location.reload();';
-            chrome.tabs.executeScript(arrayOfTabs[0].id, {code: code});
-        });
         refreshList()
     };
 
