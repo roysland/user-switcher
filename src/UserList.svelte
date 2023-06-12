@@ -34,8 +34,7 @@
         console.log(tab)
         chrome.cookies.set({
             name: 'ss-id',
-            value: login.SessionId,
-            url: tab.url,
+            value: login.SessionId
         })
         refreshList()
     };
